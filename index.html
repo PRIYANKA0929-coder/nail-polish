@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nail Polish Studio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .page {
+      display: none;
+      padding: 20px;
+    }
+    #homePage {
+      display: block;
+      background: linear-gradient(to right, #ffe6f0, #fce1ff);
+      min-height: 100vh;
+    }
+    h1 {
+      color: #cc0066;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .item {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .item button, .back-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .item button:hover, .back-button:hover {
+      background-color: #ff85c1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Home Page -->
+  <div id="homePage" class="page">
+    <h1>Nail Polish Studio</h1>
+    <div class="gallery">
+      <div class="item">
+        <img src="images/pink.jpg" alt="Pink Nail Polish">
+        <button onclick="goToOrderPage()">Order Now</button>
+      </div>
+      <div class="item">
+        <img src="images/red.jpg" alt="Red Nail Polish">
+        <button onclick="goToOrderPage()">Order Now</button>
+      </div>
+      <div class="item">
+        <img src="images/purple.jpg" alt="Purple Nail Polish">
+        <button onclick="goToOrderPage()">Order Now</button>
+      </div>
+      <div class="item">
+        <img src="images/blue.jpg" alt="Blue Nail Polish">
+        <button onclick="goToOrderPage()">Order Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Page -->
+  <div id="orderPage" class="page">
+    <h1>Order Confirmed!</h1>
+    <p>Your nail polish is on the way 💅</p>
+    <button class="back-button" onclick="goHome()">Home Page</button>
+  </div>
+
+  <script>
+    function goToOrderPage() {
+      document.getElementById('homePage').style.display = 'none';
+      document.getElementById('orderPage').style.display = 'block';
+    }
+
+    function goHome() {
+      document.getElementById('orderPage').style.display = 'none';
+      document.getElementById('homePage').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
